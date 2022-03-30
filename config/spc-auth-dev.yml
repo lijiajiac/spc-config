@@ -25,7 +25,3 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 
-#测试使用没有任何意义
-upload:
-  pic:
-    path: c:/upload/img
