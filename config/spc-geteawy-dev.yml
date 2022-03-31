@@ -49,7 +49,15 @@ ribbon:
 
   # 重试负载均衡其他的实例最大次数,不包括首次调用，默认1
   MaxAutoRetriesNextServer: 1
-#测试使用没有任何意义
-upload:
-  pic:
-    path: c:/upload/img
+    
+#设置actuator监控
+management:
+  endpoint:
+    shutdown:
+      enabled: false  #禁用远程关闭应用，默认是关闭的
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #暴露所有端点，默认是info，health
+      base-path: /actuator  #默认前缀是/actuator，可以改    
+    
