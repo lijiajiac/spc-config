@@ -23,3 +23,16 @@ spring:
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mapper/*.xml
+
+
+
+#设置actuator监控
+management:
+  endpoint:
+    shutdown:
+      enabled: false  #禁用远程关闭应用，默认是关闭的
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #暴露所有端点，默认是info，health
+      base-path: /actuator  #默认前缀是/actuator，可以改
